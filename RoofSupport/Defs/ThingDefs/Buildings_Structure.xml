@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Buildings>
+
+	<ThingDef Name="BuildingBase" Abstract="True">
+		<category>Building</category>
+		<soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+		<selectable>true</selectable>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<repairEffect>Repair</repairEffect>
+		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+		<filthLeaving>BuildingRubble</filthLeaving>
+	</ThingDef>
+
+	<!--========================= Roof Support ============================= -->
+	<ThingDef ParentName="BuildingBase">
+		<defName>RoofSupport</defName>
+		<label>roof support</label>
+		<thingClass>Building</thingClass>
+		<category>Building</category>
+		<description>A structural column capable of holding up a roof. Does not impede movement or provide cover.</description>
+		<graphicData>
+		<texPath>Things/Building/RoofSupport</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		<shadowData>
+			<volume>(0.2, 1, 0.2)</volume>
+			</shadowData>
+		</graphicData>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+			<MaxHitPoints>225</MaxHitPoints>
+			<WorkToMake>150</WorkToMake>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<building>
+			<isInert>true</isInert>
+			<ignoreNeedsPower>true</ignoreNeedsPower>
+		</building>
+		<stuffCategories>
+			<li>Metallic</li>
+			<li>Woody</li>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>6</costStuffCount>
+		<altitudeLayer>BuildingTall</altitudeLayer>
+		<passability>Impassable</passability>
+		<fillPercent>1</fillPercent>
+		<coversFloor>true</coversFloor>
+		<tickerType>Never</tickerType>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<holdsRoof>true</holdsRoof>
+		<designationCategory>Structure</designationCategory>
+		<blockLight>false</blockLight>
+		<damageMultipliers>
+			<li>
+				<damageDef>Bomb</damageDef>
+				<multiplier>3</multiplier>
+			</li>
+		</damageMultipliers>
+	</ThingDef>
+	<researchPrerequisite>Stonecutting</researchPrerequisite>
+</Buildings>

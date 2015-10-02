@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Defs>
+
+  <ThingDef Abstract="True" Name="ResourceBase" >
+    <thingClass>ThingWithComps</thingClass>
+    <label>unspecified resource</label>
+    <category>Item</category>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <stackLimit>75</stackLimit>
+    <comps>
+      <li>
+        <compClass>CompForbiddable</compClass>
+      </li>
+    </comps>
+    <alwaysHaulable>true</alwaysHaulable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <rotatable>false</rotatable>
+    <pathCost>15</pathCost>
+  </ThingDef>
+
+  <ThingDef Abstract="True" Name="OrganicProductBase" ParentName="ResourceBase">
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>5</DeteriorationRate>
+    </statBases>
+    <tickerType>Rare</tickerType>
+  </ThingDef>
+	
+	<ThingDef ParentName="OrganicProductBase">
+		<defName>stroyent</defName>
+		<label>Stroyent</label>
+		<description>Distilled amino acids, minerals and enzymes. Processed from Human flesh. Vaguely beef flavored.</description>
+		<graphicData>
+		<texPath>stroyent</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<DeteriorationRate>1</DeteriorationRate>
+			<MarketValue>1.5</MarketValue>
+		</statBases>
+		<soundInteract>Food_Drop</soundInteract>
+		<soundDrop>Food_Drop</soundDrop>
+		<ingestible>
+			<preferability>NeverForNutrition</preferability>
+			<ingestedDirectThought>AteRawFood</ingestedDirectThought>
+			<nutrition>0.10</nutrition>
+			<isMeat>true</isMeat>
+			<eatEffect>EatMeat</eatEffect>
+			<soundEat>RawMeat_Eat</soundEat>
+		</ingestible>
+		<thingCategories>
+			<li>MeatRaw</li>
+		</thingCategories>
+	</ThingDef>
+	
+</Defs>

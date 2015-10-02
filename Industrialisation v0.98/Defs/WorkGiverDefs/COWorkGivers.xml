@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<WorkGivers>
+
+
+  <!-- ============= Crafting - misc ============= -->
+
+
+  <WorkGiverDef>
+    <defName>DoBillsMixconcrete</defName>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Crafting</workType>
+	<priorityInType>93</priorityInType>
+    <singleBillGiverDef>ConcreteMixer</singleBillGiverDef>
+    <verb>mix</verb>
+    <gerund>mixing</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+
+
+
+
+</WorkGivers>
